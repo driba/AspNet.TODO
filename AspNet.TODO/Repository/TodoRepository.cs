@@ -32,15 +32,15 @@ namespace AspNet.TODO.Repository
             Todo task2 = new Todo()
             {
                 Id = 2,
-                Name = "Pošalji mail",
-                Deadline = DateTime.Now
+                Name = "Pošalji mail u HR u firmi",
+                Deadline = new DateTime(2022, 3, 24)
             };
 
             Todo task3 = new Todo()
             {
                 Id = 3,
-                Name = "Kupi poklon mami",
-                Deadline = DateTime.Now
+                Name = "Sistematski",
+                Deadline = new DateTime(2022, 4, 15)
             };
 
             Todo task4 = new Todo()
@@ -53,8 +53,8 @@ namespace AspNet.TODO.Repository
             Todo task5 = new Todo()
             {
                 Id = 8,
-                Name = "Godišnji!",
-                Deadline = new DateTime(2022, 7, 1)
+                Name = "Pazi! Aprililili... ne vjeruj nikome",
+                Deadline = new DateTime(2022, 4, 1)
             };
 
             todo_list.Add(task1);

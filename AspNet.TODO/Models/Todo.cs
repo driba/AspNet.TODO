@@ -12,10 +12,8 @@ namespace AspNet.TODO.Models
         public string Name { get; set; }
 
         [DisplayName("Rok zadatka")]
-        //[DataType(DataType.Date)]
-        public DateTime Deadline { get; set; }
-
-        public string Status { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime Deadline { get; set; }        
 
     }
 }
