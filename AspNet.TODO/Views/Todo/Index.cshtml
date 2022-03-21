@@ -20,15 +20,13 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Deadline)
-            </th>            
+            </th>
             <th></th>
         </tr>
     </thead>
     
-@foreach (var item in Model) {
-        <partial name="_ItemRowPartial" model="item" />       
-    }
+@foreach (var item in Model) 
+{
+        <partial name="_ItemRowPartial" model="item" />
+}
 </table>
-
-    
-
