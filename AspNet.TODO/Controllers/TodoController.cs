@@ -7,7 +7,7 @@ namespace AspNet.TODO.Controllers
 {
     public class TodoController : Controller
     {
-        // Repository
+        // Repository object
         TodoRepository _todoRepo;
 
         // Constructor
