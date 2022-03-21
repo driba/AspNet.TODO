@@ -1,14 +1,25 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using AspNet.TODO.Repository;
+using AspNet.TODO.Models;
 
 namespace AspNet.TODO.Controllers
 {
     public class TodoController : Controller
     {
+        // Repository
+        TodoRepository _todoRepo;
+
+        // Constructor
+        public TodoController()
+        {
+            _todoRepo = new TodoRepository();
+        }
         // GET: TodoController
         public ActionResult Index()
         {
-            return View();
+            List<Todo> model = _todoRepo.GetList();
+            return View(model);
         }
 
         // GET: TodoController/Details/5

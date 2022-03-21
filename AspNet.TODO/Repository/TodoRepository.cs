@@ -11,7 +11,13 @@ namespace AspNet.TODO.Repository
             if (todo_list == null)
             {
                 todo_list = new List<Todo>();
+                SimulateData();
             }
+        }
+
+        public List<Todo> GetList()
+        {
+            return todo_list;
         }
 
         private void SimulateData()
