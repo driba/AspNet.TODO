@@ -5,9 +5,10 @@ namespace AspNet.TODO.Models
 {
     public class Todo
     {
+        [Key]
         [DisplayName("ID")]
         public int Id { get; set; }
-
+        
         [DisplayName("Task name")]
         public string Name { get; set; }
 
@@ -20,15 +21,15 @@ namespace AspNet.TODO.Models
         {
             if (IsDone == true)
             {
-                return "#93c47d";  // green for done
+                return "#5cb85c";  // success - green for done
             }
             else if ((Deadline - DateTime.Now).TotalDays < 2)
             {
-                return "#e5a7a7"; // red for under 2 days or past deadline
+                return "#d9534f"; // danger - red for under 2 days or past deadline
             }
             else if ((Deadline - DateTime.Now).TotalDays < 7)
             {
-                return "#e5e5a7"; // yellow for under 7 days
+                return "#ffc107"; // warning - yellow for under 7 days
             }
             else
             {
