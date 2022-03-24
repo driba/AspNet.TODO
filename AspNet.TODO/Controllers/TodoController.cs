@@ -18,7 +18,8 @@ namespace AspNet.TODO.Controllers
         // GET: TodoController
         public ActionResult Index()
         {
-            List<Todo> model = _todoRepo.GetList();
+            List<Todo> model = _todoRepo.OrderListByImportance();
+            
             return View(model);
         }
 

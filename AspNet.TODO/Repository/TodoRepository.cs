@@ -20,6 +20,12 @@ namespace AspNet.TODO.Repository
             return todo_list;
         }
 
+        public List<Todo> OrderListByImportance()
+        {
+            var sorted_list = todo_list.OrderBy(a => (a.Deadline - DateTime.Now).TotalDays).OrderBy(a => a.IsDone).ToList();
+            return sorted_list;
+        }
+
         private void SimulateData()
         {
             Todo task1 = new Todo()
