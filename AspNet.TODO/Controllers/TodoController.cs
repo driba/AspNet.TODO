@@ -38,11 +38,13 @@ namespace AspNet.TODO.Controllers
         // POST: TodoController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
+        public ActionResult Create(Todo new_todo)
+        {          
             try
             {
-                return RedirectToAction(nameof(Index));
+                new_todo.Id = _todoRepo.GetList().Max(t => t.Id) + 1;
+                _todoRepo.CreateNewList(new_todo);
+                return RedirectToAction("Index");
             }
             catch
             {

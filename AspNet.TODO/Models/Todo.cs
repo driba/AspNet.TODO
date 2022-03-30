@@ -9,13 +9,15 @@ namespace AspNet.TODO.Models
         [DisplayName("ID")]
         public int Id { get; set; }
         
-        [DisplayName("Task name")]
+        [Required]
+        [DisplayName("Task")]
         public string Name { get; set; }
 
         [DisplayName("Deadline")]
         [DataType(DataType.Date)]
         public DateTime Deadline { get; set; }
 
+        [DisplayName("Completion status")]
         public bool IsDone { get; set; } = false;
         public string ColorByImportance()
         {

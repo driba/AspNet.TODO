@@ -4,7 +4,7 @@ namespace AspNet.TODO.Repository
 {
     public class TodoRepository
     {
-        private List<Todo> todo_list;
+        private static List<Todo> todo_list;
 
         public TodoRepository()
         {
@@ -25,6 +25,14 @@ namespace AspNet.TODO.Repository
             var sorted_list = todo_list.OrderBy(a => (a.Deadline - DateTime.Now).TotalDays).OrderBy(a => a.IsDone).ToList();
             return sorted_list;
         }
+
+        public void CreateNewList(Todo new_todo)
+        {
+            todo_list.Add(new_todo);
+        }
+
+
+
 
         private void SimulateData()
         {
